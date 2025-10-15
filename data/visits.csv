@@ -1,0 +1,6 @@
+visit_id,patient_id,ts,triage_cat,arrival_mode,presenting,hr,rr,sbp,temp,spo2,ecg_flag,lab_abn,prev_ed_30d,outcome
+V1001,P001,2025-09-20T10:15:00,3,Walk-in,Chest pain,102,22,168,37.2,96,1,1,0,admit
+V1004,P001,2025-10-05T14:20:00,4,Walk-in,Back pain,82,16,138,36.8,98,0,0,1,short_stay
+V1005,P001,2025-10-10T12:00:00,4,Walk-in,Muscle strain,78,16,128,36.7,99,0,0,0,short_stay
+V1002,P002,2025-10-01T09:00:00,4,Walk-in,Sore throat,84,16,118,37.0,99,0,0,0,discharge
+V1003,P003,2025-09-30T21:45:00,2,Ambulance,Shortness of breath,110,26,92,37.8,90,1,1,1,admit

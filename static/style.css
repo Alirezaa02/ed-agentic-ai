@@ -1,0 +1,23 @@
+/* professional theme */
+:root{--bg:#0b1020;--surface:#0f172a;--panel:#0e1427;--line:#1f2937;--text:#e5e7eb;--muted:#94a3b8;--ok:#16a34a;--warn:#f59e0b;--err:#ef4444;--accent:#22d3ee;--radius:16px;--shadow:0 12px 30px rgba(0,0,0,.35)}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--surface:#ffffff;--panel:#ffffff;--line:#e5e7eb;--text:#0b1220;--muted:#6b7280}}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,var(--bg),#0a0f1e);color:var(--text);font:14px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface),#0b1222)}
+.brand{font-weight:800;letter-spacing:.2px;display:flex;gap:10px;align-items:center}.brand .dot{width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 40% 40%,var(--accent),#0284c7)}
+nav a{color:var(--muted);text-decoration:none;margin-left:14px}nav a:hover{color:var(--text)}
+.container{max-width:1200px;margin:18px auto;padding:0 16px;display:grid;gap:18px}
+.card{background:linear-gradient(180deg,var(--panel),#0c1428 70%);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.controls{display:flex;gap:10px;align-items:center}
+label{font-size:12px;color:var(--muted)}
+select,input,button{padding:10px 12px;border-radius:12px;border:1px solid #273449;background:#0b1222;color:var(--text)}
+button{cursor:pointer;background:linear-gradient(180deg,#131e33,#0e1729);border-color:#2a3b56;box-shadow:0 8px 18px rgba(0,0,0,.35);transition:.15s}button:hover{transform:translateY(-1px);border-color:#3b82f6}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(140px,1fr));gap:12px}
+.form-row{display:flex;flex-direction:column;gap:6px}.form-row.stretch{grid-column:span 3}
+.output{background:#0a0f1c;border:1px dashed #24324a;border-radius:12px;padding:12px;min-height:120px;white-space:pre-wrap}.output.small{min-height:60px}
+.chip{display:inline-flex;gap:6px;align-items:center;padding:.25rem .6rem;border-radius:999px;border:1px solid #26324a;background:#0b1222;color:var(--text);font-weight:600;font-size:12px}
+.chip.ok{border-color:rgba(22,163,74,.4);background:rgba(22,163,74,.1)}.chip.warn{border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.1)}.chip.err{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.1)}.chip.muted{color:var(--muted)}
+.skel{position:relative;overflow:hidden;background:#0b0f1a;border-radius:12px;min-height:90px;border:1px solid #1c2540}.skel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);animation:shine 1.2s infinite}@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.spinner{border:2px solid rgba(255,255,255,.2);border-top:2px solid var(--accent);border-radius:50%;width:14px;height:14px;display:inline-block;animation:spin .8s linear infinite;margin-right:8px}@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;right:18px;bottom:18px;background:#0b1222;border:1px solid #2a3b56;color:var(--text);padding:10px 14px;border-radius:10px;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+.hidden{display:none}

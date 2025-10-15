@@ -1,0 +1,2 @@
+{"ts": "2025-10-15T17:42:46.202423Z", "event": "predict", "patient": "eea502719605", "prediction": "admit", "confidence": 0.987}
+{"ts": "2025-10-15T17:44:15.508583Z", "event": "predict", "patient": "df1e40051eff", "prediction": "admit", "confidence": 0.987}

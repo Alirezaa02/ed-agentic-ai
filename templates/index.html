@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ED Agentic AI</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="dot"></span> ED Agentic AI</div>
+    <nav>
+      <a href="#summary">Summary</a>
+      <a href="#predictor">Predictor</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section id="summary" class="card">
+      <div class="card-head">
+        <h2>Patient Summary</h2>
+        <div class="controls">
+          <label>Patient</label>
+          <select id="patientId">{% for pid in demo_ids %}<option>{{pid}}</option>{% endfor %}</select>
+          <button id="btnSummary">Load</button>
+          <button id="btnCopy">Copy Summary</button>
+        </div>
+      </div>
+      <div id="summarySkeleton" class="skel hidden"></div>
+      <pre id="summaryBox" class="output"></pre>
+    </section>
+    <section id="predictor" class="card">
+      <div class="card-head"><h2>Disposition Predictor</h2></div>
+      <form id="predictForm" class="grid-3">
+        <div class="form-row"><label>HR</label><input id="hr" type="number" value="102" min="20" max="220"/></div>
+        <div class="form-row"><label>RR</label><input id="rr" type="number" value="22" min="6" max="50"/></div>
+        <div class="form-row"><label>SBP</label><input id="sbp" type="number" value="168" min="60" max="240"/></div>
+        <div class="form-row"><label>Temp</label><input id="temp" step="0.1" type="number" value="37.2" min="30" max="43"/></div>
+        <div class="form-row"><label>SpO₂</label><input id="spo2" type="number" value="96" min="50" max="100"/></div>
+        <div class="form-row"><label>Triage (1–5)</label><input id="triage_cat" type="number" value="3" min="1" max="5"/></div>
+        <div class="form-row"><label>ECG Abn</label><select id="ecg_flag"><option value="0">No</option><option value="1" selected>Yes</option></select></div>
+        <div class="form-row"><label>Labs Abn</label><select id="lab_abn"><option value="0">No</option><option value="1" selected>Yes</option></select></div>
+        <div class="form-row"><label>Prev ED (30d)</label><input id="prev_ed_30d" type="number" value="0" min="0" max="10"/></div>
+        <div class="form-row"><label>Arrival</label><select id="arrival_mode"><option>Walk-in</option><option>Ambulance</option></select></div>
+        <div class="form-row stretch"><button type="submit" id="btnPredict"><span class="spinner hidden" id="spinPredict"></span> Predict</button></div>
+      </form>
+      <div class="result">
+        <span id="chipLabel" class="chip">—</span>
+        <span id="chipConf" class="chip muted">Confidence: —</span>
+      </div>
+      <pre id="predictBox" class="output small"></pre>
+    </section>
+    <section id="dashboard" class="card">
+      <div class="card-head"><h2>Vitals & Schedule</h2></div>
+      <div class="grid-2">
+        <div><canvas id="vitalsChart" height="200"></canvas></div>
+        <div id="calendar"></div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast hidden"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

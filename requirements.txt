@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic==2.*
+sqlalchemy>=2.0
+aiosqlite
+pandas
+numpy
+scikit-learn
+joblib
+jinja2
+pytest
+pytest-asyncio
+httpx

@@ -1,0 +1,4 @@
+patient_id,nhs_no,name,age,sex,allergies,pmhx,meds
+P001,123456,Jamie Doe,55,M,NKDA,"HTN; T2DM; Smoker","Perindopril; Metformin; NSAID"
+P002,223344,Mia Lee,24,F,Penicillin,"Asthma","Salbutamol"
+P003,998877,Arun Patel,78,M,NKDA,"AF; CHF","Apixaban; Furosemide; NSAID"
